@@ -5,6 +5,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -22,16 +25,9 @@ public class ArithmeticTest {
         @Test
         void toReturnFiveWhenThreeIsAddedWithTwo() {
 
-
-    //        AAA
-    //        Arrange
             int two = 2, three = 3, five = 5;
 
-    //        Act
-            int actualSum = arithmetic.add(three, two);
-
-    //        Assert
-            assertEquals(five, actualSum);
+            assertThat(arithmetic.add(three, two), is(equalTo(five)));
         }
 
         @Test
@@ -39,9 +35,7 @@ public class ArithmeticTest {
 
             int minusTwo = -2, three = 3, five = 5;
 
-            int actualSum = arithmetic.add(five, minusTwo);
-
-            assertEquals(three, actualSum);
+            assertThat(arithmetic.add(five, minusTwo), is(equalTo(three)));
         }
 
         @Test
@@ -49,9 +43,7 @@ public class ArithmeticTest {
 
             int zero = 0, three = 3;
 
-            int actualSum = arithmetic.add(three, zero);
-
-            assertEquals(three, actualSum);
+            assertThat(arithmetic.add(three, zero), is(equalTo(three)));
         }
     }
 
@@ -62,9 +54,7 @@ public class ArithmeticTest {
 
             int two = 2, five = 5, seven = 7;
 
-            int actualDifference = arithmetic.sub(seven, two);
-
-            assertEquals(five, actualDifference);
+            assertThat(arithmetic.add(seven, two), is(equalTo(five)));
         }
     }
 
@@ -75,9 +65,7 @@ public class ArithmeticTest {
 
             int four = 4, five = 5, twenty = 20;
 
-            int actualProduct = arithmetic.multiply(five, four);
-
-            assertEquals(twenty, actualProduct);
+            assertThat(arithmetic.add(five, four), is(equalTo(twenty)));
         }
     }
 
@@ -88,9 +76,7 @@ public class ArithmeticTest {
 
             int four = 4, five = 5, twenty = 20;
 
-            int actualQuotient = arithmetic.divide(twenty, five);
-
-            assertEquals(four, actualQuotient);
+            assertThat(arithmetic.add(twenty, five), is(equalTo(four)));
         }
 
         @Test
@@ -98,9 +84,7 @@ public class ArithmeticTest {
 
             int two = 2, three = 3, seven = 7;
 
-            int actualQuotient = arithmetic.divide(seven, two);
-
-            assertEquals(three, actualQuotient);
+            assertThat(arithmetic.add(seven, two), is(equalTo(three)));
         }
 
         @Test
