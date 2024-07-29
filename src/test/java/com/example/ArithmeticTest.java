@@ -9,9 +9,16 @@ public class ArithmeticTest {
     @Test
     void toReturnFiveWhenThreeIsAddedWithTwo() {
 
+
+//        AAA
+//        Arrange
         Arithmetic arithmetic = new Arithmetic();
         int two = 2, three = 3, five = 5;
 
-        assertEquals(five, arithmetic.add(three, two));
+//        Act
+        int actualSum = arithmetic.add(three, two);
+
+//        Assert
+        assertEquals(five, actualSum);
     }
 }
