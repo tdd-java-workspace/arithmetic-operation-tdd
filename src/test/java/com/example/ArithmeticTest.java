@@ -65,4 +65,17 @@ public class ArithmeticTest {
             assertEquals(five, actualDifference);
         }
     }
+
+    @Nested
+    class Multiplication {
+        @Test
+        void toReturnTwentyWhenFiveIsMultipliedWithFour() {
+
+            int four = 4, five = 5, twenty = 20;
+
+            int actualProduct = arithmetic.multiply(five, four);
+
+            assertEquals(twenty, actualProduct);
+        }
+    }
 }
