@@ -1,11 +1,19 @@
 package com.example;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ArithmeticTest {
+
+    private static Arithmetic arithmetic;
+
+    @BeforeAll
+    static void beforeAll() {
+        arithmetic = new Arithmetic();
+    }
 
     @Nested
     class Addition {
@@ -15,7 +23,6 @@ public class ArithmeticTest {
 
     //        AAA
     //        Arrange
-            Arithmetic arithmetic = new Arithmetic();
             int two = 2, three = 3, five = 5;
 
     //        Act
@@ -28,7 +35,6 @@ public class ArithmeticTest {
         @Test
         void toReturnThreeWhenFiveIsAddedWithMinusTwo() {
 
-            Arithmetic arithmetic = new Arithmetic();
             int minusTwo = -2, three = 3, five = 5;
 
             int actualSum = arithmetic.add(five, minusTwo);
@@ -39,7 +45,6 @@ public class ArithmeticTest {
         @Test
         void toReturnThreeWhenThreeIsAddedWithZero() {
 
-            Arithmetic arithmetic = new Arithmetic();
             int zero = 0, three = 3;
 
             int actualSum = arithmetic.add(three, zero);
@@ -53,7 +58,6 @@ public class ArithmeticTest {
         @Test
         void toReturnFiveWhenSevenIsSubtractedWithTwo() {
 
-            Arithmetic arithmetic = new Arithmetic();
             int two = 2, five = 5, seven = 7;
 
             int actualDifference = arithmetic.sub(seven, two);
