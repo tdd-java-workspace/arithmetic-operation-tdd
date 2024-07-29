@@ -10,7 +10,8 @@ public class ArithmeticTest {
     void toReturnFiveWhenThreeIsAddedWithTwo() {
 
         Arithmetic arithmetic = new Arithmetic();
+        int two = 2, three = 3, five = 5;
 
-        assertEquals(5, arithmetic.add(3, 2));
+        assertEquals(five, arithmetic.add(three, two));
     }
 }
