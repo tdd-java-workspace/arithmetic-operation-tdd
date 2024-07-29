@@ -1,5 +1,7 @@
 package com.example;
 
+import com.example.exceptions.ZeroDivisionException;
+
 public class Arithmetic {
 
     public int add(int number1, int number2) {
@@ -14,12 +16,11 @@ public class Arithmetic {
         return number1 * number2;
     }
 
-    public int divide(int number1, int number2) throws ArithmeticException {
-        try {
-            return number1 / number2;
+    public int divide(int number1, int number2) throws ZeroDivisionException {
+        if(number2 == 0) {
+            throw new ZeroDivisionException("Zero Division Error");
         }
-        catch(ArithmeticException e) {
-            throw new ArithmeticException();
-        }
+
+        return number1 / number2;
     }
 }

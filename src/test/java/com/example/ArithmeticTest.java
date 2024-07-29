@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.exceptions.ZeroDivisionException;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -83,7 +84,7 @@ public class ArithmeticTest {
     @Nested
     class Division {
         @Test
-        void toReturnFourWhenTwentyIsDividedByFive() {
+        void toReturnFourWhenTwentyIsDividedByFive() throws ZeroDivisionException {
 
             int four = 4, five = 5, twenty = 20;
 
@@ -93,7 +94,7 @@ public class ArithmeticTest {
         }
 
         @Test
-        void toReturnThreeWhenSevenIsDividedByTwo() {
+        void toReturnThreeWhenSevenIsDividedByTwo() throws ZeroDivisionException {
 
             int two = 2, three = 3, seven = 7;
 
@@ -103,11 +104,11 @@ public class ArithmeticTest {
         }
 
         @Test
-        void toThrowZeroDivisionExceptionWhenTwoIsDividedByZero() throws ArithmeticException{
+        void toThrowZeroDivisionExceptionWhenTwoIsDividedByZero() {
 
             int zero = 0, two = 2;
 
-            assertThrows(ArithmeticException.class, () -> arithmetic.divide(two, zero));
+            assertThrows(ZeroDivisionException.class, () -> arithmetic.divide(two, zero));
         }
     }
 }
