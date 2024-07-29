@@ -43,4 +43,15 @@ public class ArithmeticTest {
 
         assertEquals(three, actualSum);
     }
+
+    @Test
+    void toReturnFiveWhenSevenIsSubtractedWithTwo() {
+
+        Arithmetic arithmetic = new Arithmetic();
+        int two = 2, five = 5, seven = 7;
+
+        int actualSum = arithmetic.sub(seven, two);
+
+        assertEquals(five, actualSum);
+    }
 }
