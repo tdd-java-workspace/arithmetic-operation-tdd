@@ -78,4 +78,27 @@ public class ArithmeticTest {
             assertEquals(twenty, actualProduct);
         }
     }
+
+    @Nested
+    class Division {
+        @Test
+        void toReturnFourWhenTwentyIsDividedByFive() {
+
+            int four = 4, five = 5, twenty = 20;
+
+            int actualQuotient = arithmetic.divide(twenty, five);
+
+            assertEquals(four, actualQuotient);
+        }
+
+        @Test
+        void toReturnThreeWhenSevenIsDividedByTwo() {
+
+            int two = 2, three = 3, seven = 7;
+
+            int actualQuotient = arithmetic.divide(seven, two);
+
+            assertEquals(three, actualQuotient);
+        }
+    }
 }
