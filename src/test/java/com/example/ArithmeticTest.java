@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ArithmeticTest {
 
@@ -99,6 +100,14 @@ public class ArithmeticTest {
             int actualQuotient = arithmetic.divide(seven, two);
 
             assertEquals(three, actualQuotient);
+        }
+
+        @Test
+        void toThrowZeroDivisionExceptionWhenTwoIsDividedByZero() throws ArithmeticException{
+
+            int zero = 0, two = 2;
+
+            assertThrows(ArithmeticException.class, () -> arithmetic.divide(two, zero));
         }
     }
 }
